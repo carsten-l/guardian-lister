@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" important;
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 
@@ -25,6 +25,10 @@
   color-scheme: light;
 }
 
+html {
+  transition: all 0.2s;
+}
+
 
 a {
   font-weight: 500;
@@ -35,18 +39,8 @@ a:hover {
   color: light-dark(#747bff,  rgba(255, 255, 255, 0.87));
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 button {
   border-radius: 8px;
