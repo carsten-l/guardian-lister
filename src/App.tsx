@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ThemeSwitcher from './components/ThemeSwitcher.js';
 import useThemeStore from './stores/ThemeStore.js';
+import Home from './pages/Home.js';
 
 useThemeStore.subscribe((state) => {
   document.documentElement.setAttribute('data-theme', state.theme);
@@ -26,6 +27,8 @@ function App() {
       </header>
       <main>
         <div className="container mx-auto py-6 px-8">
+
+          <Home />
 
       <h1>Vite + React</h1>
       <div className="card">
