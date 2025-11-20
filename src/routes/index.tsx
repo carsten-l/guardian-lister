@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
         );
         return response.data.response.results;
     },
-    staleTime: 1000 * 10, // 10 seconds
+    staleTime: 1000 * 60, // 1 minute
 });
 function Index() {
     const items = Route.useLoaderData() as NewsItem[];
