@@ -22,12 +22,12 @@ function Index() {
                 Welcome to the Guardian Article Lister!
             </h1>
 
-            <ul className="mt-12">
+            <div className="mt-12 space-y-4">
                 {items &&
                     items.map((item) => (
                         <NewsListItem key={item.id} item={item} />
                     ))}
-            </ul>
+            </div>
         </>
     );
 }
