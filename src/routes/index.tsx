@@ -1,24 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { apiClient } from "../lib/apiClient";
-import { type NewsItem } from "../types";
+import { type GuardianApiResponse } from "../types";
 import NewsListItem from "../components/NewsListItem";
 
 export const Route = createFileRoute("/")({
     component: Index,
     loader: async () => {
-        const response = await apiClient.get("/search",
-        { params: { "page-size": 50 } }
+        const { data } = await apiClient.get<GuardianApiResponse>("/search",
+        { params: { "page-size": 200 } }
         );
-        return response.data.response.results;
+        if (!data?.response?.results) {
+            throw new Error("Invalid API response");
+        }
+        return data.response.results;
     },
     staleTime: 1000 * 60, // 1 minute
 });
 function Index() {
-    const items = Route.useLoaderData() as NewsItem[];
+    const items = Route.useLoaderData();
+    console.log(items);
 
     return (
         <>
-            <h1 className="text-2xl font-bold">
+            <h1 className="text-2xl font-bold text-balance">
                 Welcome to the Guardian Article Lister!
             </h1>
 
