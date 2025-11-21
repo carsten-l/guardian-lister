@@ -10,7 +10,7 @@ export default function ThemeSwitcher() {
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
   
   return (
-    <Button className={`rounded-full flex justify-center items-center ${theme === "light" ? "bg-gray-200" : "bg-gray-600"}`} size="large" onClick={toggleTheme} icon={theme === "light" ? <WeatherMoon32Light /> : <WeatherSunny32Light /> } />
+    <Button className={`rounded-full flex justify-center items-center ${theme === "light" ? "bg-neutral-300" : "bg-neutral-600"}`} size="large" onClick={toggleTheme} icon={theme === "light" ? <WeatherMoon32Light /> : <WeatherSunny32Light /> } />
   );
 };
 
