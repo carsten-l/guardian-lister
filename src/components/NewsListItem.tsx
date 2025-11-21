@@ -1,4 +1,4 @@
-import { type NewsItem } from "../lib/types.js";
+import { type NewsItem } from "../types";
 
 export default function NewsListItem({ item }: { item: NewsItem }) {
   return (
