@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import axios from "axios";
-import { type NewsItem } from "../lib/types.js";
-import NewsListItem from "../components/NewsListItem.js";
+import { apiClient } from "../lib/apiClient";
+import { type NewsItem } from "../types";
+import NewsListItem from "../components/NewsListItem";
 
 export const Route = createFileRoute("/")({
     component: Index,
     loader: async () => {
-        const response = await axios.get(
-            `https://content.guardianapis.com/search?page-size=50&api-key=${import.meta.env.VITE_GUARDIAN_API_KEY}`,
+        const response = await apiClient.get("/search",
+        { params: { "page-size": 50 } }
         );
         return response.data.response.results;
     },
