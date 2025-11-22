@@ -1,21 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { apiClient } from "../lib/apiClient";
-import { type GuardianApiResponse } from "../types";
 import NewsListItem from "../components/NewsListItem";
+import { fetchGuardianArticles } from "../services/theGuardian";
 
 export const Route = createFileRoute("/")({
     component: Index,
-    loader: async () => {
-        const { data } = await apiClient.get<GuardianApiResponse>("/search",
-        { params: { "page-size": 200 } }
-        );
-        if (!data?.response?.results) {
-            throw new Error("Invalid API response");
-        }
-        return data.response.results;
-    },
+    loader: () => fetchGuardianArticles(),
     staleTime: 1000 * 60, // 1 minute
 });
+
 function Index() {
     const items = Route.useLoaderData();
     console.log(items);
