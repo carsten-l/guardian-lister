@@ -10,7 +10,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
     const items = Route.useLoaderData();
-    console.log(items);
 
     return (
         <>
@@ -19,10 +18,9 @@ function Index() {
             </h1>
 
             <div className="mt-12 space-y-4">
-                {items &&
-                    items.map((item) => (
-                        <NewsListItem key={item.id} item={item} />
-                    ))}
+                {items.map((item) => (
+                    <NewsListItem key={item.id} item={item} />
+                ))}
             </div>
         </>
     );
