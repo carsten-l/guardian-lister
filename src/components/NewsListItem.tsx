@@ -1,4 +1,5 @@
 import { type NewsItem } from "../types";
+import { formatDate } from "../utils/formatDate";
 
 export default function NewsListItem({ item }: { item: NewsItem }) {
     return (
@@ -9,13 +10,7 @@ export default function NewsListItem({ item }: { item: NewsItem }) {
                     : item.sectionName}
             </p>
             <h2 className="text-balance">{item.webTitle}</h2>
-            <p className="text-sm">
-                {new Intl.DateTimeFormat("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "2-digit",
-                }).format(new Date(item.webPublicationDate))}
-            </p>
+            <p className="text-sm">{formatDate(item.webPublicationDate)}</p>
         </div>
     );
 }
