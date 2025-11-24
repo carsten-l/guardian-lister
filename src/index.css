@@ -6,26 +6,23 @@
     line-height: 1.5;
     font-weight: 400;
 
-    color-scheme: light dark;
-    color: light-dark(#213547, rgba(255, 255, 255, 0.87));
-    background-color: light-dark(#ffffff, #242424);
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color-scheme: light dark;
 }
 
 [data-theme="dark"] {
-    color-scheme: dark;
+    background-color: rgb(41 41 41);
 }
-
 [data-theme="light"] {
-    color-scheme: light;
+    background-color: rgb(255 255 255);
 }
 
-html {
-    transition: all 0.2s;
+html,
+#root .fui-FluentProvider {
+    transition: background-color 0.2s;
 }
 
 a {
@@ -44,6 +41,3 @@ a[aria-current="page"] {
 a:hover {
     color: light-dark(hsl(200, 45%, 30%), hsl(200, 45%, 70%));
 }
-
-
-

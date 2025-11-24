@@ -1,16 +1,30 @@
 import { type NewsItem } from "../types";
 import { formatDate } from "../utils/formatDate";
+import { Card, CardHeader, CardFooter } from "@fluentui/react-components";
+import { Caption1, Caption2Strong, Title3 } from "@fluentui/react-components";
 
 export default function NewsListItem({ item }: { item: NewsItem }) {
     return (
-        <div className="border border-gray-300 rounded p-4 dark:border-gray-600 shadow-sm space-y-2">
-            <p className="text-xs font-black text-gray-500 dark:text-gray-300 tracking-[4px] uppercase">
-                {item.pillarName !== item.sectionName
-                    ? `${item.pillarName} • ${item.sectionName}`
-                    : item.sectionName}
-            </p>
-            <h2 className="text-balance">{item.webTitle}</h2>
-            <p className="text-sm">{formatDate(item.webPublicationDate)}</p>
-        </div>
+        <article>
+            <Card size="large">
+                <CardHeader
+                    header={
+                        <Caption2Strong className="uppercase">
+                            {item.pillarName !== item.sectionName
+                                ? `${item.pillarName} • ${item.sectionName}`
+                                : item.sectionName}
+                        </Caption2Strong>
+                    }
+                />
+                <Title3 as="h2" className="text-balance text-lg">
+                    {item.webTitle}
+                </Title3>
+                <CardFooter>
+                    <Caption1 className="text-[colorNeutralForeground4]">
+                        {formatDate(item.webPublicationDate)}
+                    </Caption1>
+                </CardFooter>
+            </Card>
+        </article>
     );
 }

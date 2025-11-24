@@ -1,6 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import {
+    FluentProvider,
+    webDarkTheme,
+    webLightTheme,
+} from "@fluentui/react-components";
+import useThemeStore from "./stores/ThemeStore";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import NotFound from "./components/NotFound";
 import Loading from "./components/Loading";
@@ -22,8 +28,17 @@ declare module "@tanstack/react-router" {
     }
 }
 
+const AppRoot = () => {
+    const theme = useThemeStore((state) => state.theme);
+    return (
+        <FluentProvider theme={theme === "dark" ? webDarkTheme : webLightTheme}>
+            <RouterProvider router={router} />
+        </FluentProvider>
+    );
+};
+
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <RouterProvider router={router} />
+        <AppRoot />
     </StrictMode>,
 );
