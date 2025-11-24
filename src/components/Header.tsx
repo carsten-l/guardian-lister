@@ -14,6 +14,9 @@ export default function Header() {
                     <Link to="/about" className="ml-4">
                         About
                     </Link>
+                    <Link to="/contact" className="ml-4">
+                        Contact
+                    </Link>
                 </nav>
                 <ThemeSwitcher />
             </div>
