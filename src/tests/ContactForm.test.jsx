@@ -1,7 +1,7 @@
 import { render } from "vitest-browser-react";
 import { page } from "@vitest/browser/context";
 import { describe, it, expect } from "vitest";
-import ContactForm from "./ContactForm"; // adjust path
+import ContactForm from "../components/ContactForm"; // adjust path
 
 describe("ContactForm", () => {
     it("renders all fields with correct structure", async () => {
