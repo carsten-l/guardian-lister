@@ -11,6 +11,7 @@ Simple client-side React app that lists recent Guardian articles with basic them
 - Reusable data access layer (services)
 - Utility date formatting
 - Responsive UI (Tailwind CSS)
+- Form validation (Zod)
 - Testing of the form component (Vitest)
 - Type safety (TypeScript)
 
