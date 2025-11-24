@@ -47,7 +47,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit} noValidate className="space-y-1.5">
             <Field
                 label="Name"
                 validationMessage={errors?.name?.errors[0]}
@@ -85,7 +85,9 @@ export default function ContactForm() {
                     onChange={(_, data) => setMessage(data.value)}
                 />
             </Field>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="mt-2">
+                Submit
+            </Button>
         </form>
     );
 }
