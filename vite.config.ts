@@ -20,6 +20,7 @@ export default defineConfig({
         enabled: true,
         provider: playwright(),
         instances: [{ browser: "chromium" }],
+        headless: process.env.HEADLESS === "true",
     },
 },
 });
