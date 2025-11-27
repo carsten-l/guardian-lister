@@ -9,7 +9,7 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "test": "vitest",
-        "test:watch": "vitest --watch",
+        "test:headless": "HEADLESS=true vitest",
         "coverage": "vitest run --coverage"
     },
     "dependencies": {
