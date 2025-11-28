@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { fetchGuardianArticles } from "../services/theGuardian";
-import { apiClient } from "../lib/apiClient";
-import type { GuardianApiResponse } from "../types";
+import { fetchGuardianArticles } from "../../services/theGuardian";
+import { apiClient } from "../../lib/apiClient";
+import type { GuardianApiResponse } from "../../types";
 
 // Mock the apiClient module
 vi.mock("../lib/apiClient");

@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import type { Mock } from "vitest";
-import useThemeStore from "../stores/ThemeStore";
+import useThemeStore from "../../stores/ThemeStore";
 
 // --- MOCKS -----------------------------------------------------
 

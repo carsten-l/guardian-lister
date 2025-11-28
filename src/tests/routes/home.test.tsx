@@ -3,7 +3,7 @@ import { render } from "vitest-browser-react";
 import { page } from "@vitest/browser/context";
 
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "../routeTree.gen";
+import { routeTree } from "../../routeTree.gen";
 
 
 

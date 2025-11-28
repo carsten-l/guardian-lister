@@ -2,8 +2,8 @@ import { describe, it, beforeEach, expect, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { page } from "@vitest/browser/context";
 import type { Mock } from "vitest";
-import useThemeStore from "../stores/ThemeStore";
-import ThemeSwitcher from "../components/ThemeSwitcher";
+import useThemeStore from "../../stores/ThemeStore";
+import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 
 // --- MOCKS -----------------------------------------------------
