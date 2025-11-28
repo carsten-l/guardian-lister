@@ -1,7 +1,7 @@
 import { render } from "vitest-browser-react";
 import { page } from "@vitest/browser/context";
 import { describe, it, expect } from "vitest";
-import NewsListItem from "../components/NewsListItem";
+import NewsListItem from "../../components/NewsListItem";
 
 describe("NewsListItem", () => {
     const mockNewsItem = {
