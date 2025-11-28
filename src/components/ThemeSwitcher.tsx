@@ -10,7 +10,7 @@ export default function ThemeSwitcher() {
         <Button
             shape="circular"
             onClick={toggleTheme}
-            aria-label="Toggle Theme"
+            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             size="large"
             icon={
                 theme === "light" ? (
